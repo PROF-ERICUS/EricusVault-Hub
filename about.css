@@ -22,8 +22,11 @@ body {
 .main-content {
   flex: 1;
   padding: 20px;
+  padding-bottom: 100px; /* enough space for footer + extra */
   box-sizing: border-box;
 }
+
+
 
 
    /* ===== Header ===== */
@@ -186,10 +189,15 @@ body {
   width: 100%;
   background-color: #222;
   color: #eee;
-  padding: 20px 15px;
+  padding: 20px 15px; /* footer height */
   text-align: center;
   font-size: 14px;
+  z-index: 1000;
+  box-sizing: border-box;
 }
+
+
+
 
 .footer a {
   color: #f5f5f5;
@@ -351,11 +359,13 @@ copyright {
 }
 
 /* grid of value cards */
-.values-grid{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap:18px;
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 0; /* remove default bottom margin */
 }
+
 
 /* individual card */
 .value-card{
