@@ -9,25 +9,34 @@
   --text-light: #eee;
   --footer-height: 80px;
   --header-height: 70px;
+  --transition: 0.3s ease;
 }
 
 /* ===== Body & Layout ===== */
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background-color: #f5f5f5;
+  background-color: var(--bg-light);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+/* Main section grows to push footer down if content is short */
+main, .main-content {
+  flex: 1;
+}
+
 /* ===== Main Content ===== */
 .main-content {
-  flex: 1;
   padding: 40px 20px;
   box-sizing: border-box;
   text-align: center;
-  color: #333;
+  color: var(--text-dark);
 }
 
 .main-content h1 {
@@ -169,6 +178,7 @@ header {
   text-align: center;
   font-size: 14px;
   word-wrap: break-word;
+  border-top: 1px solid #444; /* subtle separator */
 }
 
 .footer a {
@@ -203,7 +213,7 @@ header {
 }
 
 .contact-link:hover {
-  color: #0056b3;
+  color: var(--primary-dark);
 }
 
 .copyright {
