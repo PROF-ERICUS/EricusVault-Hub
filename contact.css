@@ -1,44 +1,54 @@
-body {
-    font-family: Arial, sans-serif;
+/* ========== GLOBAL LAYOUT ========== */
+html, body {
+    height: 100%;
     margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
     background-color: #f5f5f5;
-     padding-bottom: 80px; /* adjust to footer height */
-     
 }
+
+/* Main content area grows to fill space */
+main {
+    flex: 1;
+}
+
+/* ========== BACKGROUND VIDEO ========== */
 #bg-video {
-  position: fixed;
-  top: 70px; /* header height */
-  bottom: 40px; /* footer height */
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: auto;
-  min-height: calc(100vh - 110px); /* full available height */
-  object-fit: cover;
-  z-index: -1;
+    position: fixed;
+    top: 70px; /* header height */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    min-height: calc(100vh - 70px);
+    object-fit: cover;
+    z-index: -1;
 }
+
 @media (max-width: 768px) {
-  #bg-video {
-    width: 100vw;
-    height: calc(100vh - 110px);
-    min-height: auto;
-  }
+    #bg-video {
+        width: 100vw;
+        height: calc(100vh - 70px);
+        min-height: auto;
+    }
 }
 
-
-/* Header */
-  /* ===== Header ===== */
-    header {
-        background: #fff;
-        padding: 12px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #ddd;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    
+/* ========== HEADER ========== */
+header {
+    background: #fff;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -49,6 +59,7 @@ body {
     background: none;
 }
 
+/* Side Menu */
 .side-menu {
     position: fixed;
     top: 0;
@@ -58,12 +69,16 @@ body {
     background: #000;
     color: white;
     transition: left 0.3s ease;
-    z-index: 2000; /* Increased so it covers header */
+    z-index: 2000;
     padding: 15px;
     overflow-y: auto;
 }
 
-/* ===== Overlay ===== */
+.side-menu.active {
+    left: 0;
+}
+
+/* Overlay */
 .overlay {
     position: fixed;
     top: 0;
@@ -72,15 +87,10 @@ body {
     width: 100%;
     background: rgba(0,0,0,0.5);
     display: none;
-    z-index: 1500; /* Also above header but below menu */
-}
-/* When active, bring it into view */
-.side-menu.active {
-    left: 0;
+    z-index: 1500;
 }
 
-
-
+/* Menu Header */
 .menu-header {
     display: flex;
     align-items: center;
@@ -140,271 +150,249 @@ body {
     color: white;
     text-decoration: none;
 }
+
 .header img,
 .menu-header img {
     width: 90px;
     height: auto;
 }
+
+/* ========== MAIN CONTENT ========== */
 .main-content {
-  padding: 40px 20px;
-  text-align: center;
-  color: #333;
-  font-family: Arial, sans-serif;
+    padding: 40px 20px;
+    text-align: center;
+    color: #333;
 }
 
 .main-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
 .main-content p {
-  font-size: 1.2rem;
-  margin: 8px 0;
-  color: #555;
+    font-size: 1.2rem;
+    margin: 8px 0;
+    color: #555;
 }
 
 .open-menu-btn {
-  margin-top: 20px;
-  font-size: 16px;
-  padding: 10px 25px;
-  cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
+    margin-top: 20px;
+    font-size: 16px;
+    padding: 10px 25px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
 
 .open-menu-btn:hover {
-  background-color: #0056b3;
-}
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #222;
-  color: #eee;
-  padding: 20px 15px;
-  text-align: center;
-  font-size: 14px;
-  z-index: 1000; /* make sure it stays on top */
+    background-color: #0056b3;
 }
 
+/* ========== FOOTER ========== */
+.footer {
+    background-color: #222;
+    color: #eee;
+    padding: 20px 15px;
+    text-align: center;
+    font-size: 14px;
+}
 
 .footer-nav {
-  margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .footer-nav a {
-  color: #eee;
-  margin: 0 12px;
-  text-decoration: none;
-  transition: color 0.3s;
+    color: #eee;
+    margin: 0 12px;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
 .footer-nav a:hover {
-  color: #007bff;
+    color: #007bff;
 }
 
 .contact-us {
-  margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .contact-link {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
 }
 
 .contact-link:hover {
-  color: #0056b3;
+    color: #0056b3;
 }
 
 copyright {
-  font-size: 13px;
-  color: #ccc;
-}
-
-/* Responsive for smaller screens */
-@media (max-width: 480px) {
-  .footer-nav a {
-    display: block;
-    margin: 8px 0;
-  }
-  
-  .footer {
     font-size: 13px;
-  }
+    color: #ccc;
 }
 
+@media (max-width: 480px) {
+    .footer-nav a {
+        display: block;
+        margin: 8px 0;
+    }
+    
+    .footer {
+        font-size: 13px;
+    }
+}
 
-/* ===========================
-   CONTACT PAGE STYLING
-=========================== */
-
+/* ========== CONTACT FORM SECTION ========== */
 .contact-form-section {
-  max-width: 800px;
-  margin: 40px auto;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 0.6s ease-in-out;
+    max-width: 800px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.6s ease-in-out;
 }
 
 .contact-form-section h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 2rem;
-  color: #222;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #222;
 }
 
 .contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .contact-form .form-group {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-form label {
-  font-weight: bold;
-  margin-bottom: 6px;
-  color: #333;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #333;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 12px 14px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  background-color: #fff;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fff;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #007BFF;
-  outline: none;
-  box-shadow: 0 0 6px rgba(0, 123, 255, 0.2);
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.2);
 }
 
 .contact-form textarea {
-  resize: vertical;
-  min-height: 120px;
+    resize: vertical;
+    min-height: 120px;
 }
 
 .contact-form .btn {
-  align-self: flex-start;
-  background: #007BFF;
-  color: #fff;
-  padding: 12px 28px;
-  border-radius: 8px;
-  border: none;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;
+    align-self: flex-start;
+    background: #007BFF;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
 .contact-form .btn:hover {
-  background: #0056b3;
+    background: #0056b3;
 }
 
-/* CONTACT INFO CARDS - Same as About Page */
+/* ========== VALUES GRID ========== */
 .values-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin: 40px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+    padding: 0 10px;
 }
 
 .value-card {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    word-wrap: break-word;
 }
 
 .value-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #007BFF;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #007BFF;
 }
 
 .value-card p a {
-  color: #333;
-  text-decoration: none;
+    color: #333;
+    text-decoration: none;
 }
 
 .value-card p a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .value-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 
-/* ===========================
-   RESPONSIVE DESIGN
-=========================== */
+/* ========== RESPONSIVE BREAKPOINTS ========== */
 @media (max-width: 768px) {
-  .contact-form-section {
-    padding: 20px;
-  }
+    .contact-form-section {
+        padding: 20px;
+    }
 
-  .contact-form .btn {
-    align-self: stretch;
-    text-align: center;
-  }
+    .contact-form .btn {
+        align-self: stretch;
+        text-align: center;
+    }
 
-  .values-grid {
-    grid-template-columns: 1fr;
-  }
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 480px) {
-  .contact-form-section h2 {
-    font-size: 1.5rem;
-  }
+    .contact-form-section h2 {
+        font-size: 1.5rem;
+    }
 
-  .contact-form input,
-  .contact-form textarea {
-    font-size: 0.95rem;
-  }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.95rem;
+    }
 }
 
-/* Smooth fade-in animation */
+/* ========== ANIMATION ========== */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.contact-us {
-  margin-bottom: 15px;
-}
-
-.contact-link {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-.contact-link:hover {
-  color: #0056b3;
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
