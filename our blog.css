@@ -5,6 +5,11 @@ body {
      padding-bottom: 80px; /* adjust to footer height */
      
 }
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full viewport height */
+}
 #bg-video {
   position: fixed;
   top: 70px; /* header height */
