@@ -44,7 +44,6 @@ main, .main-content {
   margin-bottom: 25px;
   font-weight: 700;
   color: #222;
-  text-align: center;
 }
 
 .main-content p {
@@ -69,10 +68,8 @@ header {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.header img,
-.menu-header img {
+.header img, .menu-header img {
   width: 90px;
-  height: auto;
 }
 
 .menu-btn {
@@ -102,7 +99,6 @@ header {
   transform: translateX(0);
 }
 
-/* ===== Overlay ===== */
 .overlay {
   position: fixed;
   top: 0;
@@ -114,7 +110,6 @@ header {
   z-index: 1500;
 }
 
-/* Menu Links */
 .menu-header {
   display: flex;
   align-items: center;
@@ -177,7 +172,6 @@ header {
   padding: 20px 15px;
   text-align: center;
   font-size: 14px;
-  word-wrap: break-word;
 }
 
 .footer a {
@@ -206,7 +200,6 @@ header {
 
 .contact-link {
   color: var(--primary-color);
-  text-decoration: none;
   font-weight: 600;
   transition: color 0.3s;
 }
@@ -219,6 +212,7 @@ header {
   font-size: 13px;
   color: #ccc;
 }
+
 /* ===== About Section ===== */
 .about-container {
   padding: 60px 20px;
@@ -235,7 +229,6 @@ header {
   margin-bottom: 25px;
   color: #0d2538;
   text-align: center;
-  position: relative;
 }
 
 .about-container h2::after {
@@ -284,7 +277,7 @@ header {
 }
 
 .value-card {
-  background: var(--card-bg);
+  background: var(--card-bg, #fff);
   border-radius: 10px;
   padding: 20px 18px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
@@ -300,7 +293,7 @@ header {
 }
 
 .value-card p {
-  color: var(--muted-text);
+  color: var(--muted-text, #666);
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -338,18 +331,11 @@ main {
     display: block;
     margin: 8px 0;
   }
-  
   .footer {
     font-size: 13px;
+    padding: 15px;
   }
-
   .core-values-section h2 {
     font-size: 1.6rem;
-  }
-}
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .main-content {
-    padding-bottom: 40px;
   }
 }
