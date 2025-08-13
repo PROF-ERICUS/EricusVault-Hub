@@ -12,17 +12,17 @@ body {
   line-height: 1.6;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vh; /* makes footer stick to bottom when little content */
   font-size: 16px;
-  padding-top: 70px; /* Adjust based on your header height */
+  padding-top: 70px; /* adjust based on header height */
 }
 
 /* Main Content */
 main {
-  flex: 1;
+  flex: 1; /* pushes footer down */
   max-width: 900px;
   margin: 3rem auto;
-  padding: 0 1.5rem 4rem; /* bottom padding so footer never overlaps */
+  padding: 0 1.5rem 2rem;
   background: white;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -76,122 +76,120 @@ main a:hover {
   text-decoration: underline;
 }
 
-  /* ===== Header ===== */
-    header {
-        background: #fff;
-        padding: 12px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #ddd;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* ===== Header ===== */
+header {
+  background: #fff;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .menu-btn {
-    font-size: 28px;
-    cursor: pointer;
-    border: none;
-    background: none;
+  font-size: 28px;
+  cursor: pointer;
+  border: none;
+  background: none;
 }
 
 .side-menu {
-    position: fixed;
-    top: 0;
-    left: -280px;
-    height: 100%;
-    width: 260px;
-    background: #000;
-    color: white;
-    transition: left 0.3s ease;
-    z-index: 2000; /* Increased so it covers header */
-    padding: 15px;
-    overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: -280px;
+  height: 100%;
+  width: 260px;
+  background: #000;
+  color: white;
+  transition: left 0.3s ease;
+  z-index: 2000;
+  padding: 15px;
+  overflow-y: auto;
 }
 
-/* ===== Overlay ===== */
+/* Overlay */
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(0,0,0,0.5);
-    display: none;
-    z-index: 1500; /* Also above header but below menu */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 1500;
 }
 
 .side-menu.active {
-    left: 0;
+  left: 0;
 }
 
-
 .menu-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .menu-header img {
-    height: 30px;
+  height: 30px;
 }
 
 .close-btn {
-    font-size: 28px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: white;
+  font-size: 28px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
 }
 
 .menu-section {
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding: 10px 0;
 }
 
 .dropdown-btn {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: white;
-    width: 100%;
-    font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  width: 100%;
+  font-size: 16px;
 }
 
 .dropdown-content {
-    display: none;
-    padding-left: 10px;
-    font-size: 14px;
-    margin-top: 5px;
+  display: none;
+  padding-left: 10px;
+  font-size: 14px;
+  margin-top: 5px;
 }
 
 .dropdown-content a {
-    display: block;
-    color: #bbb;
-    text-decoration: none;
-    padding: 5px 0;
+  display: block;
+  color: #bbb;
+  text-decoration: none;
+  padding: 5px 0;
 }
 
 .dropdown-content a:hover {
-    color: white;
+  color: white;
 }
 
 .simple-link {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .header img,
 .menu-header img {
-    width: 90px;
-    height: auto;
+  width: 90px;
+  height: auto;
 }
 
 .open-menu-btn {
@@ -209,18 +207,13 @@ main a:hover {
   background-color: #0056b3;
 }
 
-/* Footer */
+/* ===== Footer (Not Fixed) ===== */
 .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
   background-color: #222;
   color: #eee;
   padding: 20px 15px;
   text-align: center;
   font-size: 14px;
-  z-index: 1000; /* make sure it stays on top */
 }
 
 .footer-nav {
@@ -243,7 +236,7 @@ main a:hover {
 }
 
 .contact-link {
-  color: #007bff;
+  color: #ccc;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s;
@@ -258,11 +251,11 @@ copyright {
   color: #ccc;
 }
 
-/* Responsive for smaller screens */
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
   main {
     margin: 2rem 1rem;
-    padding: 1rem 1rem 4rem;
+    padding: 1rem 1rem 2rem;
   }
 }
 
