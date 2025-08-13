@@ -43,28 +43,21 @@
     border: none;
     background: none;
 }
-
-/* Force sidebar to be fully hidden off-screen */
 .side-menu {
     position: fixed;
     top: 0;
-    left: -300px; /* Move fully outside view */
+    left: -280px;
     height: 100%;
     width: 260px;
-    background: black;
+    background: #000;
     color: white;
     transition: left 0.3s ease;
-    z-index: 10;
+    z-index: 2000; /* Increased so it covers header */
     padding: 15px;
-    overflow-y: auto; /* If content exceeds height */
+    overflow-y: auto;
 }
 
-/* When active, bring it into view */
-.side-menu.active {
-    left: 0;
-}
-
-/* Overlay hidden by default */
+/* ===== Overlay ===== */
 .overlay {
     position: fixed;
     top: 0;
@@ -72,9 +65,15 @@
     height: 100%;
     width: 100%;
     background: rgba(0,0,0,0.5);
-    display: none; /* Start hidden */
-    z-index: 9;
+    display: none;
+    z-index: 1500; /* Also above header but below menu */
 }
+
+/* When active, bring it into view */
+.side-menu.active {
+    left: 0;
+}
+
 
 .menu-header {
     display: flex;
