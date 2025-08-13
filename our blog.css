@@ -196,6 +196,30 @@ body {
   text-align: center;
   font-size: 14px;
 }
+.footer a {
+  color: #f5f5f5;
+  text-decoration: none;
+  display: inline-block;
+  margin: 5px 10px;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #ffcc00;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 20px 15px; /* optional extra spacing */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer a {
+    display: block;
+    margin: 8px 0;
+  }
+}
 
 
 .footer-nav {
