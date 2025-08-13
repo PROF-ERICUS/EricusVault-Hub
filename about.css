@@ -5,6 +5,10 @@ body {
      padding-bottom: 80px; /* adjust to footer height */
      
 }
+.main-content {
+  flex: 1; /* fills space above footer */
+  padding: 20px;
+}
 
 @media (max-width: 768px) {
   #bg-video {
@@ -525,6 +529,7 @@ copyright {
 .about-text {
   margin-bottom: 30px;
 }
+
 
 
 
