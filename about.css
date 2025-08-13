@@ -13,6 +13,17 @@ body {
     min-height: auto;
   }
 }
+/* Mobile adjustments for footer */
+@media (max-width: 600px) {
+  .main-content {
+    padding-bottom: 180px; /* Enough space for footer height on mobile */
+  }
+
+  .footer-contact {
+    padding: 40px 20px; /* Ensure footer height is consistent */
+  }
+}
+
 
 
    /* ===== Header ===== */
@@ -514,6 +525,7 @@ copyright {
 .about-text {
   margin-bottom: 30px;
 }
+
 
 
 
