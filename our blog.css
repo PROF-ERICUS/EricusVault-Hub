@@ -5,22 +5,6 @@ body {
      padding-bottom: 80px; /* adjust to footer height */
      
 }
-.main-content {
-  flex: 1; /* fills space above footer */
-  padding: 20px;
-}
-
-/* Mobile adjustments for footer */
-@media (max-width: 600px) {
-  .main-content {
-    padding-bottom: 180px; /* Enough space for footer height on mobile */
-  }
-
-  .footer-contact {
-    padding: 40px 20px; /* Ensure footer height is consistent */
-  }
-}
-
 #bg-video {
   position: fixed;
   top: 70px; /* header height */
@@ -39,6 +23,11 @@ body {
     height: calc(100vh - 110px);
     min-height: auto;
   }
+}
+.main-content {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 
@@ -201,7 +190,6 @@ body {
   padding: 20px 15px;
   text-align: center;
   font-size: 14px;
-  z-index: 1000; /* make sure it stays on top */
 }
 
 
@@ -337,5 +325,3 @@ footer {
     display: block;
   }
 }
-
-
