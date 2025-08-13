@@ -5,6 +5,18 @@ body {
      padding-bottom: 80px; /* adjust to footer height */
      
 }
+
+/* Mobile adjustments for footer */
+@media (max-width: 600px) {
+  .main-content {
+    padding-bottom: 180px; /* Enough space for footer height on mobile */
+  }
+
+  .footer-contact {
+    padding: 40px 20px; /* Ensure footer height is consistent */
+  }
+}
+
 #bg-video {
   position: fixed;
   top: 70px; /* header height */
@@ -321,3 +333,4 @@ footer {
     display: block;
   }
 }
+
