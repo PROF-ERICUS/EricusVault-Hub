@@ -207,17 +207,23 @@ body {
 .footer a:hover {
   color: #ffcc00;
 }
+
+/* Make sure text wraps inside the footer */
+.footer nav, 
+.footer .contact-us, 
+.footer .copyright {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .main-content {
-    padding: 20px 15px; /* optional extra spacing */
+    padding-bottom: 40px; /* extra space so content doesn’t touch footer */
   }
-}
 
-@media (max-width: 480px) {
-  .footer a {
-    display: block;
-    margin: 8px 0;
+  .footer {
+    padding: 30px 15px;
+    font-size: 14px;
   }
 }
 
