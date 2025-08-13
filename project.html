@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eric Andoh — Projects</title>
+  <meta name="description" content="Portfolio of Eric Andoh, showcasing software development and engineering projects." />
+  
+  <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+      <img src="images/Logo vault.png" alt="Logo" />
+      <button class="menu-btn">&#9776;</button>
+  </header>
+
+  <!-- Main Content -->
+  <main class="content">
+    <h2>My Projects</h2>
+    <div class="project-list">
+
+      <!-- Project 1 -->
+      <div class="project">
+        <h3>Multi-School GPA & CGPA Calculator</h3>
+        <p>A smart, user-friendly academic performance tool supporting multiple universities, allowing students to calculate their GPA & CGPA with ease.</p>
+        <a href="https://prof-ericus.github.io/MULTISCH-GPA/" target="_blank" rel="noopener noreferrer" class="btn">Live Demo</a>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project">
+        <h3>Online Attendance System</h3>
+        <p>A QR code-based university attendance system with data persistence, student login, and CSV report generation.</p>
+        <a href="https://prof-ericus.github.io/ONLINE-ATTENDANCE/" target="_blank" rel="noopener noreferrer" class="btn">Live Demo</a>
+      </div>
+
+    </div>
+  </main>
+ 
+<!-- Overlay -->
+<div class="overlay"></div>
+
+<!-- Side Menu -->
+<div class="side-menu">
+    <div class="menu-header">
+        <img src="images/Logo vault.png" alt="Logo" />
+        <button class="close-btn">&times;</button>
+    </div>
+
+    <div class="menu-section">
+        <button class="dropdown-btn">Home ▼</button>
+        <div class="dropdown-content">
+            <a href="index.html">Home</a>
+            <a href="project.html">Project</a>
+            <a href="cv.html">Cv</a>
+        </div>
+    </div>
+
+    <div class="menu-section">
+        <button class="dropdown-btn">Skills ▼</button>
+        <div class="dropdown-content">
+            <a href="#">SEO</a>
+            <a href="#">Content Marketing</a>
+            <a href="#">Social Media</a>
+        </div>
+    </div>
+
+    <div class="menu-section">
+        <button class="dropdown-btn">Contact ▼</button>
+        <div class="dropdown-content">
+            <a href="contact.html">Email</a>
+            <a href="https://wa.link/03006a" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="menu-section">
+        <a href="blog.html" class="simple-link">Blog</a>
+    </div>
+</div>
+
+<footer class="footer">
+  <nav class="footer-nav">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="our blog.html">Our blog</a>
+    <a href="https://prof-ericus.github.io/MULTISCH-GPA/">Latest projects</a>
+  </nav>
+
+  <div class="contact-us">
+    <a href="contact.html" class="contact-link">Contact us</a>
+  </div>
+
+  <div class="copyright">
+    © <span id="year"></span> ericusvaulthub. All Rights Reserved. 
+  </div>
+</footer>
+  <script src="project.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

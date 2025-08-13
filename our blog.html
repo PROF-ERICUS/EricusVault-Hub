@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Personal Blog</title>
+  <link rel="stylesheet" href="our blog.css" />
+</head>
+<body>
+  <!-- Header -->
+  <!-- Header -->
+  <header class="header">
+      <img src="images/Logo vault.png" alt="Logo" />
+      <button class="menu-btn">&#9776;</button>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="blog-container" id="blog-posts">
+
+      <!-- Manual blog posts with full content -->
+      <article class="blog-post">
+        <h2>Welcome to My Blog</h2>
+        <p>Hi everyone! Welcome to my personal blog. This space is where I’ll share my thoughts, tutorials, project updates, and life experiences. I started this blog because I wanted to have a place where I could connect with people who share similar passions.</p>
+        <p>Here you’ll find articles about web development, productivity, personal growth, and technology trends. My goal is to keep the content informative but also conversational, so it feels like you’re chatting with a friend over coffee.</p>
+        <p>If you’re new here, feel free to explore the articles and leave a comment. Your feedback is always welcome!</p>
+        <small>Published: 2025-08-13</small>
+      </article>
+
+      <article class="blog-post">
+        <h2>How I Built My Portfolio Website</h2>
+        <p>Building a personal portfolio website is one of the best ways to showcase your skills and work. In this post, I’ll walk you through how I designed and coded my portfolio from scratch using HTML, CSS, and JavaScript.</p>
+        <p>I started with wireframing the layout to understand the flow of content. Then, I chose a clean, minimal design because it puts the focus on the projects themselves. I made sure it was fully responsive so it looks great on mobile, tablets, and desktops.</p>
+        <p>Some of the features I implemented include smooth scrolling, a fixed navigation bar, and animated project cards. These small touches make the site feel more dynamic and engaging.</p>
+        <small>Published: 2025-08-12</small>
+      </article>
+
+      <article class="blog-post">
+        <h2>5 Productivity Tips That Actually Work</h2>
+        <p>We all want to be more productive, but sometimes it feels like there are too many distractions. Over the years, I’ve tried many productivity methods, and these five have worked wonders for me:</p>
+        <ul>
+          <li><strong>Time Blocking:</strong> Allocate specific hours for each task to stay focused.</li>
+          <li><strong>Two-Minute Rule:</strong> If a task takes less than two minutes, do it immediately.</li>
+          <li><strong>Single Tasking:</strong> Multitasking kills focus; work on one thing at a time.</li>
+          <li><strong>Pomodoro Technique:</strong> 25 minutes of work followed by a 5-minute break.</li>
+          <li><strong>Daily Reflection:</strong> Spend 10 minutes reviewing your day and planning tomorrow.</li>
+        </ul>
+        <p>Implementing even one of these tips can drastically improve your efficiency.</p>
+        <small>Published: 2025-08-10</small>
+      </article>
+
+      <article class="blog-post">
+        <h2>The Future of Web Development</h2>
+        <p>Web development is evolving at a rapid pace. From AI-driven design tools to advanced frameworks like Next.js and Svelte, the future is exciting for developers.</p>
+        <p>One major trend is the rise of serverless architectures, which make it easier to deploy scalable applications without managing servers. Another is the focus on accessibility and performance, as search engines now rank sites based on user experience metrics.</p>
+        <p>My advice for aspiring developers: keep learning, experiment with new tools, and never stop building projects.</p>
+        <small>Published: 2025-08-08</small>
+      </article>
+
+    </section>
+  </main>
+<!-- Overlay -->
+<div class="overlay"></div>
+
+<!-- Side Menu -->
+<div class="side-menu">
+    <div class="menu-header">
+        <img src="images/Logo vault.png" alt="Logo" />
+        <button class="close-btn">&times;</button>
+    </div>
+
+    <div class="menu-section">
+        <button class="dropdown-btn">Home ▼</button>
+        <div class="dropdown-content">
+            <a href="about.html">About</a>
+            <a href="project.html">Project</a>
+            <a href="cv.html">Cv</a>
+        </div>
+    </div>
+
+    <div class="menu-section">
+        <button class="dropdown-btn">Skills▼</button>
+        <div class="dropdown-content">
+            <a href="#">SEO</a>
+            <a href="#">Content Marketing</a>
+            <a href="#">Social Media</a>
+        </div>
+    </div>
+
+    <div class="menu-section">
+        <button class="dropdown-btn">Contact ▼</button>
+        <div class="dropdown-content">
+            <a href="contact.html">Email</a>
+            <a href="https://wa.link/03006a" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="menu-section">
+        <a href="blog.html" class="simple-link">Blog</a>
+    </div>
+</div>
+
+<footer class="footer">
+  <nav class="footer-nav">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="our blog.html">Our blog</a>
+    <a href="https://prof-ericus.github.io/MULTISCH-GPA/">Latest projects</a>
+  </nav>
+
+  <div class="contact-us">
+    <a href="contact.html" class="contact-link">Contact us</a>
+  </div>
+
+  <div class="copyright">
+    © <span id="year"></span> ericusvaulthub. All Rights Reserved. 
+  </div>
+</footer>
+
+<script src="about.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

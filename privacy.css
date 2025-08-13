@@ -1,0 +1,278 @@
+/* ===== Global Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 16px;
+  padding-top: 70px; /* Adjust based on your header height */
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1.5rem 4rem; /* bottom padding so footer never overlaps */
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+main h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #0d2538;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+main p {
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+  color: #444;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+main h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  color: #0d2538;
+  border-left: 4px solid #ffcc00;
+  padding-left: 0.6rem;
+  font-weight: 600;
+}
+
+main ul {
+  padding-left: 1.5rem;
+  list-style: disc;
+  margin-top: 0.8rem;
+}
+
+main ul li {
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-size: 1.02rem;
+}
+
+main a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+main a:hover {
+  text-decoration: underline;
+}
+
+  /* ===== Header ===== */
+    header {
+        background: #fff;
+        padding: 12px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-btn {
+    font-size: 28px;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    height: 100%;
+    width: 260px;
+    background: #000;
+    color: white;
+    transition: left 0.3s ease;
+    z-index: 2000; /* Increased so it covers header */
+    padding: 15px;
+    overflow-y: auto;
+}
+
+/* ===== Overlay ===== */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 1500; /* Also above header but below menu */
+}
+
+.side-menu.active {
+    left: 0;
+}
+
+
+.menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.menu-header img {
+    height: 30px;
+}
+
+.close-btn {
+    font-size: 28px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+}
+
+.menu-section {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding: 10px 0;
+}
+
+.dropdown-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    width: 100%;
+    font-size: 16px;
+}
+
+.dropdown-content {
+    display: none;
+    padding-left: 10px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.dropdown-content a {
+    display: block;
+    color: #bbb;
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+.dropdown-content a:hover {
+    color: white;
+}
+
+.simple-link {
+    color: white;
+    text-decoration: none;
+}
+
+.header img,
+.menu-header img {
+    width: 90px;
+    height: auto;
+}
+
+.open-menu-btn {
+  margin-top: 20px;
+  font-size: 16px;
+  padding: 10px 25px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.open-menu-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #222;
+  color: #eee;
+  padding: 20px 15px;
+  text-align: center;
+  font-size: 14px;
+  z-index: 1000; /* make sure it stays on top */
+}
+
+.footer-nav {
+  margin-bottom: 15px;
+}
+
+.footer-nav a {
+  color: #eee;
+  margin: 0 12px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #007bff;
+}
+
+.contact-us {
+  margin-bottom: 15px;
+}
+
+.contact-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.contact-link:hover {
+  color: #0056b3;
+}
+
+copyright {
+  font-size: 13px;
+  color: #ccc;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  main {
+    margin: 2rem 1rem;
+    padding: 1rem 1rem 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-nav a {
+    display: block;
+    margin: 8px 0;
+  }
+  
+  .footer {
+    font-size: 13px;
+  }
+}

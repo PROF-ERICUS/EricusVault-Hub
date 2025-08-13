@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MY WEBSITE</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <video autoplay muted loop id="bg-video" playsinline>
+  <source src="vidoes/video 1.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+<script>
+  const video = document.getElementById('bg-video');
+  const loopStartTime = 10;  // start looping from 10 seconds
+  const loopEndTime = 40;    // end looping at 40 seconds
+
+  video.addEventListener('loadedmetadata', () => {
+    video.currentTime = loopStartTime;  // start from 10 seconds
+    video.play();
+  });
+
+  video.addEventListener('timeupdate', () => {
+    if (video.currentTime >= loopEndTime) {
+      video.currentTime = loopStartTime;
+      video.play();
+    }
+  });
+</script>
+
+
+
+  <header class="header">
+      <img src="images/Logo vault.png" alt="Logo" />
+      <button class="menu-btn">&#9776;</button>
+  </header>
+
+  <main class="main-content">
+    <h1>Welcome!</h1>
+    <p>Hi, I'm <strong>Eric Andoh</strong>, an IT student and developer.</p>
+    <p>I specialize in building web applications and solving problems with technology.</p>
+    <button class="open-menu-btn">Open Menu</button>
+  </main>
+
+  <!-- ... rest of your content ... -->
+
+
+
+
+<!-- Overlay -->
+<div class="overlay"></div>
+
+<!-- Side Menu -->
+<div class="side-menu">
+    <div class="menu-header">
+        <img src="images/Logo vault.png" alt="Logo" />
+        <button class="close-btn">&times;</button>
+    </div>
+
+    <div class="menu-section">
+        <button class="dropdown-btn">Home ▼</button>
+        <div class="dropdown-content">
+            <a href="about.html">About</a>
+            <a href="project.html">Project</a>
+            <a href="cv.html">Cv</a>
+        </div>
+    </div>
+
+    <div class="menu-section">
+        <button class="dropdown-btn">Skills▼</button>
+        <div class="dropdown-content">
+            <a href="#">SEO</a>
+            <a href="#">Content Marketing</a>
+            <a href="#">Social Media</a>
+        </div>
+    </div>
+
+    <div class="menu-section">
+        <button class="dropdown-btn">Contact ▼</button>
+        <div class="dropdown-content">
+            <a href="contact.html">Email</a>
+            <a href="https://wa.link/03006a" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+        </div>
+    </div>
+
+    <div class="menu-section">
+        <a href="blog.html" class="simple-link">Blog</a>
+    </div>
+</div>
+
+<footer class="footer">
+  <nav class="footer-nav">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="our blog.html">Our blog</a>
+    <a href="https://prof-ericus.github.io/MULTISCH-GPA/">Latest projects</a>
+  </nav>
+
+  <div class="contact-us">
+    <a href="contact.html" class="contact-link">Contact us</a>
+  </div>
+
+  <div class="copyright">
+    © <span id="year"></span> ericusvaulthub. All Rights Reserved. 
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
