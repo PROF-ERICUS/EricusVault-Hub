@@ -5,6 +5,10 @@ body {
      padding-bottom: 80px; /* adjust to footer height */
      
 }
+.main-content {
+  flex: 1; /* fills space above footer */
+  padding: 20px;
+}
 
 /* Mobile adjustments for footer */
 @media (max-width: 600px) {
@@ -333,4 +337,5 @@ footer {
     display: block;
   }
 }
+
 
