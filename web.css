@@ -1,0 +1,406 @@
+/* ===== Global Variables ===== */
+:root {
+  --primary-color: #007bff;
+  --primary-dark: #0056b3;
+  --accent-color: #0056b3;
+  --bg-light: #f5f5f5;
+  --bg-dark: #222;
+  --text-dark: #333;
+  --text-muted: #555;
+  --text-light: #eee;
+  --footer-height: 80px;
+  --header-height: 70px;
+}
+
+/* ===== Base Styles ===== */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-light);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-dark);
+  box-sizing: border-box;
+}
+
+.main-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+}
+
+.main-content p {
+  font-size: 1.15rem;
+  color: #444;
+  line-height: 1.75;
+  margin-bottom: 18px;
+  text-align: justify;
+}
+
+/* ===== Header ===== */
+header {
+  background: #fff;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-btn {
+  font-size: 28px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  height: 100%;
+  width: 260px;
+  background: #000;
+  color: white;
+  transition: left 0.3s ease;
+  z-index: 2000;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 1500;
+}
+
+.side-menu.active {
+  left: 0;
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.menu-header img {
+  height: 30px;
+}
+
+.close-btn {
+  font-size: 28px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+}
+
+.menu-section {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding: 10px 0;
+}
+
+.dropdown-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  width: 100%;
+  font-size: 16px;
+}
+
+.dropdown-content {
+  display: none;
+  padding-left: 10px;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.dropdown-content a {
+  display: block;
+  color: #bbb;
+  text-decoration: none;
+  padding: 5px 0;
+}
+
+.dropdown-content a:hover {
+  color: white;
+}
+
+.simple-link {
+  color: white;
+  text-decoration: none;
+}
+
+.header img,
+.menu-header img {
+  width: 90px;
+  height: auto;
+}
+
+.open-menu-btn {
+  margin-top: 20px;
+  font-size: 16px;
+  padding: 10px 25px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.open-menu-btn:hover {
+  background-color: #0056b3;
+}
+
+/* ===== Footer (Not Fixed) ===== */
+.footer {
+  background-color: #222;
+  color: #eee;
+  padding: 20px 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer-nav {
+  margin-bottom: 15px;
+}
+
+.footer-nav a {
+  color: #eee;
+  margin: 0 12px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #007bff;
+}
+
+.contact-us {
+  margin-bottom: 15px;
+}
+
+.contact-link {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.contact-link:hover {
+  color: #0056b3;
+}
+
+copyright {
+  font-size: 13px;
+  color: #ccc;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  main {
+    margin: 2rem 1rem;
+    padding: 1rem 1rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-nav a {
+    display: block;
+    margin: 8px 0;
+  }
+  
+  .footer {
+    font-size: 13px;
+  }
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+
+header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* FAQ Item Styles */
+.faq-item {
+  background-color: #fff;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.faq-item {
+  background-color: #fff;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: left;
+  border: none;
+  background: #f0f4f8;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.faq-question:hover {
+  background: #e2e8f0;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  transition: max-height 0.4s ease;
+}
+
+.faq-answer p, .faq-answer ul {
+  margin: 15px 0;
+}
+
+.icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.faq-item.active .icon {
+  transform: rotate(45deg);
+  color: #007BFF;
+}
+
+.faq-img {
+  max-width: 100%;
+  margin: 15px 0;
+  border-radius: 8px;
+}
+
+/* Gallery Section */
+.web-design-gallery h2 {
+  text-align: center;
+  margin: 40px 0 20px 0;
+  font-size: 2rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .main-content {
+    padding-bottom: 40px;
+  }
+
+  .footer {
+    padding: 30px 15px;
+    font-size: 14px;
+  }
+
+  .blog-container {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .blog-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-nav a {
+    display: block;
+    margin: 8px 0;
+  }
+  
+  .footer {
+    font-size: 13px;
+  }
+}
+.faq-link {
+  text-decoration: none; /* removes underline */
+  color: #007BFF;        /* link color */
+  transition: color 0.3s;
+}
+
+.faq-link:hover {
+  color: #0056b3;        /* darker on hover */
+  text-decoration: underline; /* optional hover effect */
+}
+
