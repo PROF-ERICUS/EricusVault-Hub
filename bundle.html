@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Buy MTN Bundle</title>
+  <link rel="stylesheet" href="bundle.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="brand">
+      <img src="images/mtn.jpg" 
+           alt="MTN Logo" style="height:40px; vertical-align:middle;">
+      <span>Bundle Shop</span>
+    </div>
+     <div class="brand">
+      <img src="images/Prof.png" 
+           alt="MTN Logo" style="height:50px; vertical-align:middle;">
+    
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="main">
+    <section class="card">
+      <h1>Purchase MTN Bundle</h1>
+      <p class="muted">Select a bundle, enter your MTN number, and pay securely with Paystack.</p>
+
+      <div class="form-row">
+        <label for="bundleSelect">Bundle</label>
+        <select id="bundleSelect" required>
+          <option value="">-- Choose Bundle --</option>
+          <option value="6"  data-name="1GB">₵6 — 1GB</option>
+          <option value="12" data-name="2GB">₵12 — 2GB</option>
+          <option value="17" data-name="3GB">₵17 — 3GB</option>
+           <option value="23"  data-name="4GB">₵23 — 4GB</option>
+          <option value="28" data-name="5GB">₵28 — 5GB</option>
+          <option value="50" data-name="10GB">₵50 — 10GB</option>
+           <option value="80"  data-name="15GB">₵80 — 15GB</option>
+          <option value="100" data-name="20GB">₵100 — 20GB</option>
+          <option value="120" data-name="25GB">₵120 — 25GB</option>
+           <option value="145"  data-name="30GB">₵145 — 30GB</option>
+          <option value="185" data-name="40GB">₵185 — 40GB</option>
+          <option value="225" data-name="50GB">₵225 — 50GB</option>
+          <option value="425" data-name="Unlimited">₵425 — Unlimited</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="phone">MTN Phone Number</label>
+        <input type="tel" id="phone" placeholder="e.g. 0241234567" pattern="[0-9]{10}" required />
+      </div>
+
+      <div class="form-row">
+        <label for="email">Email (for receipt)</label>
+        <input type="email" id="email" placeholder="you@example.com" required />
+      </div>
+
+      <button id="payBtn" class="btn-primary">Pay with Paystack</button>
+
+      <p class="tiny">
+        By continuing, you agree to our terms and understand bundles are delivered manually after successful payment.
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer">
+    <nav class="footer-nav">
+     
+    </nav>
+    <div>© <span id="year"></span> EricusVault Hub. All rights reserved.</div>
+  </footer>
+
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
