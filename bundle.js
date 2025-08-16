@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const phone = phoneInput.value.trim();
     const email = emailInput.value.trim();
 
-    if (!bundleValue || !phone || !email) {
+    if (!bundleValue || !phone ) {
       alert("Please fill all fields correctly.");
       return;
     }
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Initialize Paystack payment
     let handler = PaystackPop.setup({
       key: 'pk_live_a041630bf628bdf36bca3d2dcae2c309ce6216c1', // <-- Replace with your Paystack Public Key
-      email: email,
+       email: email || 'no-email@example.com', // fallback if empty
       amount: bundleValue * 100, // Amount in pesewas
       currency: 'GHS',
       ref: 'MTN-BND-' + Math.floor((Math.random() * 1000000000) + 1),
@@ -58,3 +58,4 @@ document.addEventListener("DOMContentLoaded", function() {
     handler.openIframe();
   });
 });
+
