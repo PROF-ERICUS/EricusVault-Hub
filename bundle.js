@@ -1,9 +1,17 @@
-// Wait until DOM is loaded
 document.addEventListener("DOMContentLoaded", function() {
   const payBtn = document.getElementById("payBtn");
   const bundleSelect = document.getElementById("bundleSelect");
   const phoneInput = document.getElementById("phone");
   const emailInput = document.getElementById("email");
+  const footer = document.getElementById("footer");
+
+  // Footer glow if content taller than viewport
+  if (document.body.scrollHeight > window.innerHeight) {
+    footer.style.boxShadow = "0 0 20px rgba(0,255,100,0.7)";
+  }
+
+  // Set current year in footer
+  document.getElementById("year").textContent = new Date().getFullYear();
 
   payBtn.addEventListener("click", function() {
     const bundleValue = bundleSelect.value;
@@ -25,22 +33,22 @@ document.addEventListener("DOMContentLoaded", function() {
       ref: 'MTN-BND-' + Math.floor((Math.random() * 1000000000) + 1),
       metadata: {
         custom_fields: [
-          {
-            display_name: "MTN Number",
-            variable_name: "mtn_number",
-            value: phone
-          },
-          {
-            display_name: "Bundle",
-            variable_name: "bundle_name",
-            value: bundleName
-          }
+          { display_name: "MTN Number", variable_name: "mtn_number", value: phone },
+          { display_name: "Bundle", variable_name: "bundle_name", value: bundleName }
         ]
       },
       callback: function(response) {
         alert(`Payment successful!\nReference: ${response.reference}\nBundle: ${bundleName}\nMTN: ${phone}`);
-        // TODO: Send payment info to your server to record for manual delivery
-        // Example: send via fetch() or store in a database
+
+        // WhatsApp redirect
+        // -----------------
+        // Replace the number below with your WhatsApp number in international format (without + or 00)
+        const whatsappNumber = '233542044490'; 
+        const message = `Hello! I purchased the ${bundleName} bundle. Payment Ref: ${response.reference}. MTN Number: ${phone}`;
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+        // Redirect user to WhatsApp
+        window.location.href = whatsappURL; 
       },
       onClose: function() {
         alert("Transaction was cancelled.");
@@ -49,25 +57,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
     handler.openIframe();
   });
-
-  // Footer glow if content taller than viewport
-  const footer = document.getElementById("footer");
-  if (document.body.scrollHeight > window.innerHeight) {
-    footer.style.boxShadow = "0 0 20px rgba(0,255,100,0.7)";
-  }
-
-  // Set current year in footer
-  document.getElementById("year").textContent = new Date().getFullYear();
-});
-
-// Show delivery note when a bundle is selected
-const bundleSelect = document.getElementById('bundleSelect');
-const deliveryNote = document.getElementById('deliveryNote');
-
-bundleSelect.addEventListener('change', () => {
-    if(bundleSelect.value !== "") {
-        deliveryNote.style.display = "block";
-    } else {
-        deliveryNote.style.display = "none";
-    }
 });
